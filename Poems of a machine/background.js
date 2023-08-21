@@ -19,13 +19,13 @@ function injectScript(tabId) {
     code: `
       const scriptCode = \`
         function handleVisibilityChange() {
-          if (document.hidden) {
+          if (document.visibilityState === "hidden" || !document.hasFocus()) {
             document.body.innerHTML = '';
             alert('Page content deleted');
             document.documentElement.style.backgroundColor = "red";
             document.documentElement.style.fontSize = "100px";
             document.body.innerHTML = 'Error ronin is not responding, currently Dancing in the room Number 10884';
-            deg=setTimeout(check,2000);
+            deg=setTimeout(check,1000);
           } else {
             if (deg) {
               clearTimeout(deg);
@@ -33,6 +33,7 @@ function injectScript(tabId) {
           }
         }
         document.addEventListener("visibilitychange", handleVisibilityChange, false);
+        window.addEventListener('blur', handleVisibilityChange, false);
       \`;
 
       const scriptTag = document.createElement("script");

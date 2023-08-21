@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
   function injectScript() {
     chrome.tabs.executeScript({
       code: `
-        const scriptCode = \`
+        const scriptMeh = \`
           function handleVisibilityChange() {
-            if (document.hidden) {
+            if (!document.hasFocus() || document.visibilityState === "hidden") {
               document.body.innerHTML = '';
               alert('Page content deleted');
               document.documentElement.style.backgroundColor = "red";
@@ -49,12 +49,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
           }
           document.addEventListener("visibilitychange", handleVisibilityChange, false);
+          window.addEventListener('blur', handleVisibilityChange, false);
         \`;
 
-        const scriptTag = document.createElement("script");
-        scriptTag.textContent = scriptCode;
-        scriptTag.id = "visibilityChangeScript";
-        document.head.appendChild(scriptTag);
+        const scriptGuh = document.createElement("script");
+        scriptGuh.textContent = scriptMeh;
+        scriptGuh.id = "visibilityChangeStuff";
+        document.head.appendChild(scriptGuh);
       `
     });
   }

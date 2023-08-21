@@ -19,7 +19,7 @@ Ada dua tombol di dalam ekstensi, yang pertama adalah Checkbox yang kedua adalah
 - Button (Inject Js) adalah tombol tambahan, fungsinya untuk inject tag <script> kedalam html web yang sedang kita kunjungi, isi dari <script> yang di inject adalah event listener yang mendeteksi status blur pada window
 ## Mengatur akses web
 
-Di dalam file content.js ada kode berikut, masukan nama domain dari web yang di izinkan untuk di buka saat ekstensi aktif.
+Di dalam file content.js ada variable untuk mengatur izin domain, masukan nama domain dari web yang di izinkan untuk di buka saat ekstensi aktif.
 
 Untuk mengecek nama domain web, kalian bisa gunakan kode berikut di console. 
 ```javascript
@@ -58,17 +58,25 @@ Pada file background.js, di dalam fungsi "handleVisibilityChange()" kalian dapat
           }
         }
 ```
-Kalian juga dapat mengubah trigger dari popup error dengan mengubah parameter dari if statement
+Kalian juga dapat mengubah trigger dari halaman error dengan mengubah parameter dari if statement
 ```javascript
 //contoh 1
 if (document.hidden)
 
 //contoh 2
-if (window.onblur)
+if (!window.hasFocus())
+
+//contoh 3
+if (document.document.visibilityState === "hidden")
 
 /*
-Alasan aku menggunakan document.hidden 
-adalah karena document.hidden tidak terpengaruh oleh iframe
+Di ekstensi ini aku menggunakan campuran dari contoh2 dan contoh3, 
+alasanya karena lebih sensitif dan dapat mendeteksi alt+tab dengan segera,
+dan dapat bekerja di web dengan iframe karena menggunakan 2 eventListener
+(window.blur & visibilitychange)
+
+jika ingin menurunkan sesitifitas kalian bisa menggantinya dengan
+contoh1 atau contoh3
 */
 ```
 
