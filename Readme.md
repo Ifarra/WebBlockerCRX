@@ -1,8 +1,8 @@
 
 # Website Blocker
 
-Website Blocker adalah ekstensi untuk browser chrome dan edge, fungsi utama dari ekstensi ini adalah untuk mengunci semua website di internet kecuali untuk website yang di beri izin untuk di akses. 
-
+Website Blocker adalah ekstensi untuk browser chrome dan edge, fungsi utama dari ekstensi ini adalah untuk mengunci semua website di internet kecuali untuk website yang di beri izin untuk di akses.		
+ekstensi ini juga menginject semacam trigger yang akan aktif jika user beralih dari window tab, dengan begitu user bisa fokus dengan page yang sedang di gunakan.
 
 ## Cara pemasangan
 
@@ -39,7 +39,7 @@ function applyBlocking(blockingEnabled) {
 ```
 
 ## Mengatur halaman error dan trigger
-Pada file background.js, di dalam fungsi "handleVisibilityChange()" kalian dapat mengatur tampilan dari halaman erorr, ekstensi ini juga menginject semacam trigger yang akan aktif jika user beralih dari window tab, dengan begitu user bisa fokus dengan page yang sedang di gunakan.
+Pada file background.js, di dalam fungsi "handleVisibilityChange()" kalian dapat mengatur tampilan dari halaman erorr.
 ```javascript
         function handleVisibilityChange() {
           if (document.hidden) {
