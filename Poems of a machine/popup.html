@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Blocker</title>
+  <script src="popup.js"></script>
+<style>
+body{
+background: #212121;
+}
+a{
+font-size: 10px;
+color: white;
+}
+h1{
+color: white;
+font-family: system-ui;
+}
+.card {
+width: 90px;
+height: 180px;
+padding: 20px;
+display:flex;
+margin: auto;
+flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#blockToggle{
+display: block;
+margin: auto; 
+width: 25px;
+height: 25px
+}
+
+.card button {
+margin: auto;
+display: block;
+}
+
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Website Blocker</h1>
+  <label class="container">
+  <input type="checkbox" id="blockToggle">
+</label>
+  <br>
+  <button id="injectButton">Inject JS</button>
+<a href="https://github.com/ifarra" target="_blank"><p>Github-Ifarra</p></a>
+</div>
+  
+</body>
+</html>
