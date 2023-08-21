@@ -1,7 +1,7 @@
 
 # Website Blocker
 
-Ini adalah ekstensi untuk browser chrome dan edge, fungsi utama dari ekstensi ini adalah untuk mengunci semua website di internet kecuali beberapa website yang di beri izin untuk di akses. 
+Website Blocker adalah ekstensi untuk browser chrome dan edge, fungsi utama dari ekstensi ini adalah untuk mengunci semua website di internet kecuali untuk website yang di beri izin untuk di akses. 
 
 
 ## Cara pemasangan
@@ -9,7 +9,7 @@ Ini adalah ekstensi untuk browser chrome dan edge, fungsi utama dari ekstensi in
 - Buka menu ekstensi di browser (edge/chrome) 
 - Aktifkan mode developer
 - Pilih menu "Load Unpacked"
-- Pilih folder ekstesi ("Poems of a machine")
+- Pilih folder ekstesni ("Poems of a machine")
 - Aktifkan ekstensi
 
 ## Cara penggunaan
@@ -21,7 +21,7 @@ Ada dua tombol di dalam ekstensi, yang pertama adalah Checkbox yang kedua adalah
 
 Di dalam file content.js ada kode berikut, masukan nama domain dari web yang di izinkan untuk di buka saat ekstensi aktif.
 
-Untuk mengecek nama domain web kalian bisa gunakan kode berikut di console. 
+Untuk mengecek nama domain web, kalian bisa gunakan kode berikut di console. 
 ```javascript
 window.location.hostname
 ```
@@ -38,8 +38,8 @@ function applyBlocking(blockingEnabled) {
 }
 ```
 
-## Mengatur popup error dan trigger
-Di dalam fungsi "handleVisibilityChange()" kalian dapat mengatur tampilan dari halaman erorr.
+## Mengatur halaman error dan trigger
+Pada file background.js, di dalam fungsi "handleVisibilityChange()" kalian dapat mengatur tampilan dari halaman erorr, ekstensi ini juga menginject semacam trigger yang akan aktif jika user beralih dari window tab, dengan begitu user bisa fokus dengan page yang sedang di gunakan.
 ```javascript
         function handleVisibilityChange() {
           if (document.hidden) {
@@ -67,12 +67,15 @@ if (document.hidden)
 if (window.onblur)
 
 /*
-Alasan aku menggunakan document.hidden adalah karena tidak terpengaruh oleh iframe
+Alasan aku menggunakan document.hidden 
+adalah karena document.hidden tidak terpengaruh oleh iframe
 */
 ```
 
 
-## Authors
+## Author
 
 - [@Ifarra](https://www.github.com/Ifarra)
+
+Aku membuat ekstensi ini untuk membuatku fokus pada sesi belajar yang aku lakukan, ini sangat membantuku mengurangi distraksi saat belajar :)
 
