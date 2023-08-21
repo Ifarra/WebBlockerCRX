@@ -1,7 +1,7 @@
 
 # Website Blocker
 
-Ini adalah ekstensi untukk browser chrome dan edge, fungsi utama dari ekstensi ini adalah untuk mengunci semua website di internet kecuali beberapa website yang di beri izin untuk di akses. 
+Ini adalah ekstensi untuk browser chrome dan edge, fungsi utama dari ekstensi ini adalah untuk mengunci semua website di internet kecuali beberapa website yang di beri izin untuk di akses. 
 
 
 ## Cara pemasangan
